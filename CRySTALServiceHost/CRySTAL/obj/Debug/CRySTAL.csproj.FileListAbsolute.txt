@@ -1,0 +1,5 @@
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTAL\bin\Debug\CRySTAL.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTAL\bin\Debug\CRySTAL.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTAL\obj\Debug\CRySTAL.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTAL\obj\Debug\CRySTAL.pdb

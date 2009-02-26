@@ -1,0 +1,11 @@
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\bin\Debug\CRySTOLServiceHost.exe.config
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\bin\Debug\CRySTOLServiceHost.exe
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\bin\Debug\CRySTOLServiceHost.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\bin\Debug\CRySTAL.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\bin\Debug\CRySTAL.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\obj\Debug\CRySTOLServiceHost.exe
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTOLServiceHost\CRySTOLServiceHost\obj\Debug\CRySTOLServiceHost.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTOLServiceHost\bin\Debug\CRySTOLServiceHost.exe.config
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTOLServiceHost\obj\Debug\CRySTOLServiceHost.exe
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTOLServiceHost\obj\Debug\CRySTOLServiceHost.pdb
