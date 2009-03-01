@@ -11,15 +11,35 @@ namespace CRySTALServiceHost
     {
         static void Main(string[] args)
         {
-            ServiceHost host = new ServiceHost(typeof(CRySTAL.CookService));
+            object[] services = { typeof(CRySTAL.CookService), 
+                                    typeof(CRySTAL.BusBoyService),
+                                    typeof(CRySTAL.HostService), 
+                                    typeof(CRySTAL.LoginService), 
+                                    typeof(CRySTAL.MenuItem),
+                                    typeof(CRySTAL.WaiterService)};
 
-            host.Open();
+            List<ServiceHost> hosts = new List<ServiceHost>();
+            hosts.Add(new ServiceHost(typeof(CRySTAL.CookService)));
+            hosts.Add(new ServiceHost(typeof(CRySTAL.BusBoyService)));
+            hosts.Add(new ServiceHost(typeof(CRySTAL.HostService)));
+            hosts.Add(new ServiceHost(typeof(CRySTAL.LoginService)));
+            hosts.Add(new ServiceHost(typeof(CRySTAL.MenuService)));
+            hosts.Add(new ServiceHost(typeof(CRySTAL.WaiterService)));
+            foreach (ServiceHost host in hosts)
+            {
+                host.Open();
+                Console.WriteLine("CRySTAL: Service Running: " + host.BaseAddresses[0].ToString());
+            }
 
-            Console.WriteLine("CRySTAL:Cook is up and running...");
 
             Console.ReadLine();
-            host.Close();
 
+            foreach (ServiceHost host in hosts)
+            {
+                host.Close();
+                Console.WriteLine("CRySTAL: Shutingdown Service :" + host.BaseAddresses[0].ToString());
+            }
+            Console.ReadLine();
         }
     }
 }

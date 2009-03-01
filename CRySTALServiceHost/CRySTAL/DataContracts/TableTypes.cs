@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CRySTAL
 {
-    enum TableTypes
+    public enum TableTypes
     {
         Clean,
         InUse,
