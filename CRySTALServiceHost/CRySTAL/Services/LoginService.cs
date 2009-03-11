@@ -11,7 +11,12 @@ namespace CRySTAL
     {
         #region ILoginService Members
 
-        public LoginResponce LoginUser(string username, string password)
+        public LoginResponse LoginUser(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public LoginResponse LoginUserWithID(string terminalName, string terminalPassword, string uservalue)
         {
             throw new NotImplementedException();
         }

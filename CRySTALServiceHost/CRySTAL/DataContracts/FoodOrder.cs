@@ -12,7 +12,7 @@ namespace CRySTAL
         public enum OrderStatusList
         {
             sentToCook,
-            readyToDelever,
+            readyToDeliver,
             outForDelevering,
             returned,
             orderServed

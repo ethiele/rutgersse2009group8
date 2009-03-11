@@ -11,9 +11,9 @@ namespace CRySTAL
     public class MenuItem
     {
         [DataMember]
-        public string catagory1;
+        public string category1;
         [DataMember]
-        public string subcatagory1;
+        public string subcategory1;
         [DataMember]
         public MealTimes servedDuring;
         [DataMember]

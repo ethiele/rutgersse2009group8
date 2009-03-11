@@ -12,7 +12,7 @@ namespace CRySTAL
         [OperationContract]
         List<MenuItem> getAllMenuItems();
         [OperationContract]
-        List<MenuItem> getAllMenuItmesFromMenu(string menuName);
+        List<MenuItem> getAllMenuItemsFromMenu(string menuName);
         [OperationContract]
         List<string> getMenuNames();
         [OperationContract]
@@ -20,7 +20,7 @@ namespace CRySTAL
         [OperationContract]
         List<MenuItem> getMenuCategoriesFromMenu(string menuName);
         [OperationContract]
-        List<MenuItem> getMenuSubcetagories(string Category);
+        List<MenuItem> getMenuSubcategories(string Category);
         [OperationContract]
         List<MenuItem> getMenuSubcetagoriesFormMenu(string Category, string menuName);
     }

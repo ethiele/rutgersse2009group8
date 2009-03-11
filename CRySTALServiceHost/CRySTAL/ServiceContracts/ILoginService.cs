@@ -17,6 +17,18 @@ namespace CRySTAL
         /// <returns></returns>
         /// 
         [OperationContract]
-        LoginResponce LoginUser(string username, string password);
+        LoginResponse LoginUser(string username, string password);
+
+        /// <summary>
+        /// Attempts to login the user via a security token such as an RFID tag or smartcard.
+        /// Requires the terminal's credentals
+        /// </summary>
+        /// <param name="terminalName"></param>
+        /// <param name="terminalPassword"></param>
+        /// <param name="uservalue"></param>
+        /// <returns></returns>
+        [OperationContract]
+        LoginResponse LoginUserWithID(string terminalName, string terminalPassword, string uservalue);
+
     }
 }

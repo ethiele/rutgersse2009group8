@@ -18,7 +18,7 @@ namespace CRySTAL
             throw new NotImplementedException();
         }
 
-        public List<MenuItem> getAllMenuItmesFromMenu(string menuName)
+        public List<MenuItem> getAllMenuItemsFromMenu(string menuName)
         {
             throw new NotImplementedException();
         }
@@ -38,7 +38,7 @@ namespace CRySTAL
             throw new NotImplementedException();
         }
 
-        public List<MenuItem> getMenuSubcetagories(string Category)
+        public List<MenuItem> getMenuSubcategories(string Category)
         {
             throw new NotImplementedException();
         }

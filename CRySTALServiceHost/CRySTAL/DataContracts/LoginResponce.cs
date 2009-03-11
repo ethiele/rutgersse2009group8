@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace CRySTAL
 {
     [DataContract]
-    public class LoginResponce
+    public class LoginResponse
     {
         [DataMember]
         public bool LoginSuccess;
