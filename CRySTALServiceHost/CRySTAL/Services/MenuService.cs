@@ -43,7 +43,7 @@ namespace CRySTAL
             throw new NotImplementedException();
         }
 
-        public List<MenuItem> getMenuSubcetagoriesFormMenu(string Category, string menuName)
+        public List<MenuItem> getMenuSubcategoriesFromMenu(string Category, string menuName)
         {
             throw new NotImplementedException();
         }

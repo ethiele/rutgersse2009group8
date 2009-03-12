@@ -22,6 +22,6 @@ namespace CRySTAL
         [OperationContract]
         List<MenuItem> getMenuSubcategories(string Category);
         [OperationContract]
-        List<MenuItem> getMenuSubcetagoriesFormMenu(string Category, string menuName);
+        List<MenuItem> getMenuSubcategoriesFromMenu(string Category, string menuName);
     }
 }
