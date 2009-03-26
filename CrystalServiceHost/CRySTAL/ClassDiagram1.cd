@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CRySTAL.CRySTALerror">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="CRySTAL.CRySTALerror.ErrorTypes">
+        <TypeIdentifier />
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CRySTAL.FoodOrder">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="CRySTAL.FoodOrder.OrderStatusList">
+        <TypeIdentifier />
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CRySTAL.ItemOrder">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CRySTAL.LoginResponse">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CRySTAL.RejectedOrder">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CRySTAL.MenuItems">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="CRySTAL.IBusBoyService">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ServiceContracts\IBusBoyService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRySTAL.ICookService">
+    <Position X="4" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAACAAAAAACAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>ServiceContracts\ICookService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRySTAL.IHostService">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceContracts\IHostService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRySTAL.ILoginService">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>ServiceContracts\ILoginService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRySTAL.IMenuService">
+    <Position X="0.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAiAEQAAAAAIAQgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceContracts\IMenuService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRySTAL.IWaiterService">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAQAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>ServiceContracts\IWaiterService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CRySTAL.TableTypes">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
