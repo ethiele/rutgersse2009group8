@@ -29,6 +29,5 @@ namespace CRySTAL
         /// <returns></returns>
         [OperationContract]
         LoginResponse LoginUserWithID(string terminalName, string terminalPassword, string uservalue);
-
     }
 }

@@ -1,0 +1,48 @@
+﻿<Window x:Class="CRySTALManager.ShowBill"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ShowBill" Height="300" Width="250" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0"  Orientation="Horizontal">
+                <Label Padding="0">Bill ID: </Label>
+                <Label Padding="0" Name="BillID"></Label>
+            </StackPanel>
+            <StackPanel Grid.Row="1"  Orientation="Horizontal">
+                <Label Padding="0">Tabel:</Label>
+                <Label Padding="0" Name="Table"></Label>
+            </StackPanel>
+            <StackPanel Grid.Row="2"  Orientation="Horizontal">
+                <Label Padding="0">Waiter</Label>
+                <Label Padding="0" Name="Waiter"></Label>
+            </StackPanel>
+        </Grid>
+        <ListView Name="BillItemList" Grid.Row="1" ItemsSource="{Binding employees}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="Client" 
+                                                DisplayMemberBinding="{Binding Person}"/>
+                    <GridViewColumn Width="100" Header="Item"
+                                                DisplayMemberBinding="{Binding ItemName}"/>
+                    <GridViewColumn Width="60" Header="Price"
+                                                DisplayMemberBinding="{Binding ItemPrice}"/>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Label FontSize="15">Total:</Label>
+            <Label FontSize="15" Name="TotalValue"></Label>
+        </StackPanel>
+    </Grid>
+</Window>

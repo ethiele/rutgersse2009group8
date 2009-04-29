@@ -1,0 +1,202 @@
+﻿<Window x:Class="CRySTALManager.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0" 
+    xmlns:tk="http://schemas.microsoft.com/wpf/2008/toolkit"
+    Title="WpfDialog" 
+    WindowStartupLocation="CenterScreen"
+    ShowInTaskbar="True" 
+    OverridesDefaultStyle="False" 
+    WindowStyle="None" 
+    Background="Transparent"      
+    ResizeMode="CanResizeWithGrip"
+    AllowsTransparency="True" Height="388" Width="498"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Loaded="Window_Loaded">
+    <Grid>
+
+        <Border Margin="0,10,0,0" CornerRadius="20" BorderThickness="5" BorderBrush="LightBlue" Background="White"></Border>
+        <Grid Margin="11,36.8,11,11" Background="White">
+            
+            <TabControl TabStripPlacement="Left" Name="tabControl1"  SelectionChanged="tabControl1_SelectionChanged" SelectedIndex="1">
+                <TabItem>
+                    <TabItem.Header>
+                        On-Duty Employees
+                    </TabItem.Header>
+                    <ListView Name="OnDutyList" ItemsSource="{Binding employees}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="50" Header="EmployeeID" 
+                                                DisplayMemberBinding="{Binding id}"/>
+                                <GridViewColumn Width="100" Header="Employee Name"
+                                                DisplayMemberBinding="{Binding name}"/>
+                                <GridViewColumn Width="100" Header="Role"
+                                                DisplayMemberBinding="{Binding role}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        Shift Histories
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Label>Start Date:</Label>
+                            <tk:DatePicker Name="ShiftsStartDate"></tk:DatePicker>
+                            <Label>End Date:</Label>
+                            <tk:DatePicker Name="ShiftsEndDate"></tk:DatePicker>
+                            <Button Name="ShowTransactions" Click="ShowShifts_Click" >Show</Button>
+                        </StackPanel>
+                        <ListView Name="ShiftData" Grid.Row="1" ItemsSource="{Binding employees}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="50" Header="EmployeeID" 
+                                                DisplayMemberBinding="{Binding id}"/>
+                                    <GridViewColumn Width="100" Header="Employee Name"
+                                                DisplayMemberBinding="{Binding name}"/>
+                                    <GridViewColumn Width="100" Header="Role"
+                                                DisplayMemberBinding="{Binding role}"/>
+                                    <GridViewColumn Width="100" Header="Start Time"
+                                                DisplayMemberBinding="{Binding startTime}"/>
+                                    <GridViewColumn Width="100" Header="End Time"
+                                                DisplayMemberBinding="{Binding endTime}"/>
+                                    <GridViewColumn Width="100" Header="Billed Hours"
+                                                DisplayMemberBinding="{Binding hours}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        Payrole
+                    </TabItem.Header>
+                    <ListView Name="PayroalData" ItemsSource="{Binding employees}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="50" Header="EmployeeID" 
+                                                DisplayMemberBinding="{Binding id}"/>
+                                <GridViewColumn Width="100" Header="Employee Name"
+                                                DisplayMemberBinding="{Binding name}"/>
+                                <GridViewColumn Width="100" Header="Role"
+                                                DisplayMemberBinding="{Binding role}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        Transaction History
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Label>Start Date:</Label>
+                            <tk:DatePicker Name="TransactStartDate"></tk:DatePicker>
+                            <Label>End Date:</Label>
+                            <tk:DatePicker Name="TransactEndDate"></tk:DatePicker>
+                            <Button Name="ShowShifts" Click="ShowTransactions_Click" >Show</Button>
+                        </StackPanel>
+                        <ListView Name="TransactionHistDisplay" Grid.Row="1" ItemsSource="{Binding employees}"
+                                  MouseDoubleClick="TransactionHistDisplay_MouseDoubleClick">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="50" Header="ID" 
+                                                DisplayMemberBinding="{Binding ID}"/>
+                                    <GridViewColumn Width="100" Header="IsActive"
+                                                DisplayMemberBinding="{Binding IsActive}"/>
+                                    <GridViewColumn Width="100" Header="StartTime"
+                                                DisplayMemberBinding="{Binding StartTime}"/>
+                                    <GridViewColumn Width="100" Header="EndTime"
+                                                DisplayMemberBinding="{Binding EndTime}"/>
+                                    <GridViewColumn Width="100" Header="BillTotal"
+                                                DisplayMemberBinding="{Binding Bill.BillTotal}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        Menu
+                    </TabItem.Header>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        Employees
+                    </TabItem.Header>
+                    <ListView Name="employeesList" ItemsSource="{Binding employees}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="50" Header="ID" 
+                                                DisplayMemberBinding="{Binding id}"/>
+                                <GridViewColumn Width="150" Header="Employee Name"
+                                                DisplayMemberBinding="{Binding name}"/>
+                                <GridViewColumn Width="200" Header="Roles"
+                                                DisplayMemberBinding="{Binding role}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        View Order History
+                    </TabItem.Header>
+                    <d3:ChartPlotter Name="plotter">
+                        <d3:Header TextBlock.FontSize="20">
+                            Very simple chart
+                        </d3:Header>
+
+                        <d3:VerticalAxisTitle>Sine value</d3:VerticalAxisTitle>
+                        <d3:HorizontalAxisTitle>Sine argument</d3:HorizontalAxisTitle>
+                    </d3:ChartPlotter>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        Orders Summery
+                    </TabItem.Header>
+                    <Grid Name="OrdersSummery">
+                        
+                    </Grid>
+                </TabItem>
+            </TabControl>
+           
+        </Grid>
+        <Grid VerticalAlignment="Top" Height="36.838" x:Name="WindowBar" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+            <Path Stretch="Fill" Data="F1 M 32,30.6364C 32.0473,26.2587 35.6111,22.7244 40,22.7244L 661,22.7244C 665.389,22.7244 668.953,26.2587 669,30.7156L 669,30.7244L 669,30.9062L 669,47L 32,47L 32,30.9062L 32,30.7244 Z " Margin="0,0.002,0,-0.002">
+                <Path.Fill>
+                    <LinearGradientBrush StartPoint="0.498,0.747" EndPoint="0.497563,-0.500994">
+                        <GradientStop Color="#FF3B73E3" Offset="0"/>
+                        <GradientStop Color="#FFCDD9F1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+            <Rectangle Stretch="Fill" Margin="0,0,0,-0.002" Height="18.093" VerticalAlignment="Bottom">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0.489796,0.222222" EndPoint="0.489796,2.55556">
+                        <GradientStop Color="#FF1243A6" Offset="0"/>
+                        <GradientStop Color="#FF3564C2" Offset="0.338983"/>
+                        <GradientStop Color="#FF5985DF" Offset="0.720339"/>
+                        <GradientStop Color="#FFE1E3E7" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <Label Name="PageHead" Margin="11,5,10,0" VerticalAlignment="Top" Height="32.838" MouseLeftButtonDown="Window_MouseLeftButtonDown" Content="CRySTAL - Managment Center"  FontFamily="Segoe UI" FontSize="14" Background="{x:Null}" Foreground="#FFFFFFFF" Opacity="0.95" BorderBrush="{x:Null}"/>
+        <Canvas HorizontalAlignment="Right" Margin="0,8,18,0" VerticalAlignment="Top" Width="81.273" Height="19.412">
+            <Canvas Width="19.746" Height="19.412" Canvas.Left="59.027" MouseLeftButtonUp="Close_MouseLeftButtonUp" >
+                <Rectangle Opacity="0" Width="19.746" Height="19.412" Fill="#FFFFFFFF" Stroke="{x:Null}"/>
+                <Path Width="19.746" Height="19.412" Fill="#FFFFFFFF" Stretch="Fill" Data="M0.93199617,2.4814744E-07 C1.1704949,2.2351742E-08 1.4089938,0.089500507 1.5909932,0.26850138 L9.8730045,8.4101736 18.155016,0.26850138 C18.519015,-0.089500459 19.109011,-0.089500459 19.47301,0.26850138 19.837008,0.62650341 19.837008,1.2065056 19.47301,1.5645073 L11.191174,9.7060072 19.47301,17.847506 C19.837008,18.205509 19.837008,18.785511 19.47301,19.143513 19.109011,19.501515 18.519015,19.501515 18.155016,19.143513 L9.8730045,11.00184 1.5909932,19.143513 C1.2269945,19.501515 0.63699764,19.501515 0.27299911,19.143513 -0.090999704,18.785511 -0.090999704,18.205509 0.27299911,17.847506 L8.5548349,9.7060072 0.27299911,1.5645073 C-0.090999704,1.2065056 -0.090999704,0.62650341 0.27299911,0.26850138 0.45499832,0.089500507 0.69349718,2.2351742E-08 0.93199617,2.4814744E-07 z" x:Name="Close"/>
+            </Canvas>
+        </Canvas>
+    </Grid>
+    
+</Window>

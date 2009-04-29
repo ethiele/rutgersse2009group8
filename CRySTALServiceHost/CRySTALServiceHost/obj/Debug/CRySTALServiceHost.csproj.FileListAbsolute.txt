@@ -22,3 +22,11 @@ C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHos
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\obj\Debug\CRySTALServiceHost.exe
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\obj\Debug\CRySTALServiceHost.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALDataContracts.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALDataContracts.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\WorkflowLocalService.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\WorkflowLocalService.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALWorkflow.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALWorkflow.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALDataConnections.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALDataConnections.pdb

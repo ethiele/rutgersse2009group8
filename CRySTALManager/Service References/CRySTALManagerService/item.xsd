@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CRySTAL" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRySTAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/ManagerService/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8000/ManagerService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfBasicEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicEmployee" nillable="true" type="tns:BasicEmployee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicEmployee" nillable="true" type="tns:ArrayOfBasicEmployee" />
+  <xs:complexType name="BasicEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="role" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicEmployee" nillable="true" type="tns:BasicEmployee" />
+  <xs:complexType name="ArrayOfShiftData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShiftData" nillable="true" type="tns:ShiftData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShiftData" nillable="true" type="tns:ArrayOfShiftData" />
+  <xs:complexType name="ShiftData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoursWorked" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShiftID" type="xs:int" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShiftData" nillable="true" type="tns:ShiftData" />
+  <xs:complexType name="ArrayOfEmployeeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeData" nillable="true" type="tns:EmployeeData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeData" nillable="true" type="tns:ArrayOfEmployeeData" />
+  <xs:complexType name="EmployeeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roles" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeeData" nillable="true" type="tns:EmployeeData" />
+  <xs:complexType name="ArrayOfTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transaction" nillable="true" type="tns:Transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransaction" nillable="true" type="tns:ArrayOfTransaction" />
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedTo" type="xs:int" />
+      <xs:element minOccurs="0" name="Bill" nillable="true" type="tns:BillData" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NotPaied" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TableNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkflowInstID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transaction" nillable="true" type="tns:Transaction" />
+  <xs:complexType name="BillData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfBillItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillData" nillable="true" type="tns:BillData" />
+  <xs:complexType name="ArrayOfBillItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BillItem" nillable="true" type="tns:BillItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillItem" nillable="true" type="tns:ArrayOfBillItem" />
+  <xs:complexType name="BillItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Person" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillItem" nillable="true" type="tns:BillItem" />
+</xs:schema>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CRySTAL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRySTAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/WaiterService/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="FoodOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeliverToTable" type="xs:int" />
+      <xs:element minOccurs="0" name="FoodOrders" nillable="true" type="tns:ArrayOfItemOrder" />
+      <xs:element minOccurs="0" name="OrderComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="orderStatus" type="tns:FoodOrder.OrderStatusList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FoodOrder" nillable="true" type="tns:FoodOrder" />
+  <xs:complexType name="ArrayOfItemOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemOrder" nillable="true" type="tns:ItemOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemOrder" nillable="true" type="tns:ArrayOfItemOrder" />
+  <xs:complexType name="ItemOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeliverToPerson" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderComment" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderMods" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="productID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemOrder" nillable="true" type="tns:ItemOrder" />
+  <xs:simpleType name="FoodOrder.OrderStatusList">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sentToCook" />
+      <xs:enumeration value="readyToDeliver" />
+      <xs:enumeration value="outForDelevering" />
+      <xs:enumeration value="returned" />
+      <xs:enumeration value="orderServed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FoodOrder.OrderStatusList" nillable="true" type="tns:FoodOrder.OrderStatusList" />
+  <xs:complexType name="ArrayOfRejectedOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RejectedOrder" nillable="true" type="tns:RejectedOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRejectedOrder" nillable="true" type="tns:ArrayOfRejectedOrder" />
+  <xs:complexType name="RejectedOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="order" nillable="true" type="tns:FoodOrder" />
+      <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RejectedOrder" nillable="true" type="tns:RejectedOrder" />
+  <xs:complexType name="ArrayOfBillItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BillItem" nillable="true" type="tns:BillItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillItem" nillable="true" type="tns:ArrayOfBillItem" />
+  <xs:complexType name="BillItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Person" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillItem" nillable="true" type="tns:BillItem" />
+</xs:schema>

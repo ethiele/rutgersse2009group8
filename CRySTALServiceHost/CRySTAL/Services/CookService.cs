@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
+using CRySTALDataConnections.CRySTALDataSetTableAdapters;
 
 namespace CRySTAL
 {
@@ -18,18 +19,25 @@ namespace CRySTAL
         /// <returns></returns>
         public List<FoodOrder> GetAllFoodOrders(string sessionID)
         {
-            try
+            List<FoodOrder> re = new List<FoodOrder>();
+            
+            FoodOrdersTableAdapter foa = new FoodOrdersTableAdapter();
+            var orders = foa.GetDataByStatus((int)CRySTAL.FoodOrder.OrderStatusList.sentToCook);
+            foreach (var order in orders)
             {
-                throw new NotImplementedException();
+                FoodOrder fo = new FoodOrder();
+                fo.LoadFromDatabase(order.OrderNumber);
+                re.Add(fo);
             }
-            catch (Exception e)
-            {
-                CRySTALerror err = new CRySTALerror();
-                err.errorMessage = e.ToString();
-                err.ErrorType = CRySTALerror.ErrorTypes.sessionError;
-                err.sessionID = sessionID;
-                throw new FaultException<CRySTALerror>(err);
-            }
+            return re;
+            //catch (Exception e)
+            //{
+            //    CRySTALerror err = new CRySTALerror();
+            //    err.errorMessage = e.ToString();
+            //    err.ErrorType = CRySTALerror.ErrorTypes.sessionError;
+            //    err.sessionID = sessionID;
+            //    throw new FaultException<CRySTALerror>(err);
+            //}
         }
 
         public List<FoodOrder> GetNewFoodOrders(string sessionID)
@@ -39,12 +47,16 @@ namespace CRySTAL
 
         public void MarkOrderAsComplete(int orderID)
         {
-            throw new NotImplementedException();
+            FoodOrdersTableAdapter fta = new FoodOrdersTableAdapter();
+            fta.UpdateOrderStatus((int)CRySTAL.FoodOrder.OrderStatusList.readyToDeliver, orderID);
+            fta.UpdateEndTime(orderID);
         }
 
         public void RejectOrder(int orderID, string reason)
         {
-            throw new NotImplementedException();
+            FoodOrdersTableAdapter fta = new FoodOrdersTableAdapter();
+            fta.UpdateOrderStatus((int)CRySTAL.FoodOrder.OrderStatusList.orderCanceled, orderID);
+            fta.UpdateEndTime(orderID);
         }
 
         #endregion

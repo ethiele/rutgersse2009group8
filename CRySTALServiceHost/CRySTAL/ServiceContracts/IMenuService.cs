@@ -16,12 +16,12 @@ namespace CRySTAL
         [OperationContract]
         List<string> getMenuNames();
         [OperationContract]
-        List<MenuItem> getMenuCategories();
+        List<string> getMenuCategories();
         [OperationContract]
-        List<MenuItem> getMenuCategoriesFromMenu(string menuName);
+        List<string> getMenuCategoriesFromMenu(string menuName);
         [OperationContract]
-        List<MenuItem> getMenuSubcategories(string Category);
+        List<string> getMenuSubcategories(string Category);
         [OperationContract]
-        List<MenuItem> getMenuSubcategoriesFromMenu(string Category, string menuName);
+        List<string> getMenuSubcategoriesFromMenu(string Category, string menuName);
     }
 }

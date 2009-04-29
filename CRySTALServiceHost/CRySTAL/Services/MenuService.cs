@@ -15,37 +15,128 @@ namespace CRySTAL
 
         public List<MenuItem> getAllMenuItems()
         {
-            throw new NotImplementedException();
+            List<MenuItem> returnList = new List<MenuItem>();
+            CrystalMenuDataContext db = new CrystalMenuDataContext();
+            var mainMenu = from p in db.Menus
+                           where p.IsDefault == true
+                           select p;
+            int ID = mainMenu.First().ID;
+            var menuItems = from p in db.MenuItems
+                            where p.MenuID == ID
+                            select p;
+            foreach (var item in menuItems)
+            {
+                MenuItem it = new CRySTAL.MenuItem();
+                it.price = (decimal)item.Price;
+                it.servedDuring = (MenuItem.MealTimes)item.ServedDuring;
+                it.subcategory1 = item.Subcategory1;
+                it.category1 = item.Category1;
+                it.description = item.Description;
+                it.name = item.Name;
+                it.productID = item.ID;
+                returnList.Add(it);
+            }
+
+            return returnList;
         }
 
         public List<MenuItem> getAllMenuItemsFromMenu(string menuName)
         {
-            throw new NotImplementedException();
+
+            List<MenuItem> returnList = new List<MenuItem>();
+            CrystalMenuDataContext db = new CrystalMenuDataContext();
+            var mainMenu = from p in db.Menus
+                           where p.Name==menuName
+                           select p;
+            if (mainMenu.Count() == 0) return new List<MenuItem>();
+            int ID = mainMenu.First().ID;
+            var menuItems = from p in db.MenuItems
+                            where p.MenuID == ID
+                            select p;
+            
+            foreach (var item in menuItems)
+            {
+                MenuItem it = new CRySTAL.MenuItem();
+                it.price = (decimal)item.Price;
+                it.servedDuring = (MenuItem.MealTimes)item.ServedDuring;
+                it.subcategory1 = item.Subcategory1;
+                it.category1 = item.Category1;
+                it.description = item.Description;
+                it.name = item.Name;
+                it.productID = item.ID;
+                returnList.Add(it);
+            }
+            return returnList;
         }
 
         public List<string> getMenuNames()
         {
-            throw new NotImplementedException();
+            CrystalMenuDataContext db = new CrystalMenuDataContext();
+            var menuNames = from p in db.Menus
+                           select p.Name;
+            return menuNames.ToList();
         }
 
-        public List<MenuItem> getMenuCategories()
+        public List<string> getMenuCategories()
         {
-            throw new NotImplementedException();
+            List<MenuItem> returnList = new List<MenuItem>();
+            CrystalMenuDataContext db = new CrystalMenuDataContext();
+            var mainMenu = from p in db.Menus
+                           where p.IsDefault == true
+                           select p;
+            if (mainMenu.Count() == 0) return new List<string>();
+            int ID = mainMenu.First().ID;
+            var catagories = (from p in db.MenuItems
+                            where p.MenuID == ID
+                            select p.Category1).Distinct();
+            return catagories.ToList();
         }
 
-        public List<MenuItem> getMenuCategoriesFromMenu(string menuName)
+        public List<string> getMenuCategoriesFromMenu(string menuName)
         {
-            throw new NotImplementedException();
+            List<MenuItem> returnList = new List<MenuItem>();
+            CrystalMenuDataContext db = new CrystalMenuDataContext();
+            var mainMenu = from p in db.Menus
+                           where p.Name==menuName
+                           select p;
+            if (mainMenu.Count() == 0) return new List<string>();
+            int ID = mainMenu.First().ID;
+            var catagories = (from p in db.MenuItems
+                              where p.MenuID == ID
+                              select p.Category1).Distinct();
+            return catagories.ToList();
         }
 
-        public List<MenuItem> getMenuSubcategories(string Category)
+        public List<string> getMenuSubcategories(string Category)
         {
-            throw new NotImplementedException();
+            List<MenuItem> returnList = new List<MenuItem>();
+            CrystalMenuDataContext db = new CrystalMenuDataContext();
+            var mainMenu = from p in db.Menus
+                           where p.IsDefault == true
+                           select p;
+            if (mainMenu.Count() == 0) return new List<string>();
+            int ID = mainMenu.First().ID;
+            var catagories = (from p in db.MenuItems
+                              where p.MenuID == ID &&
+                              p.Category1 == Category
+                              select p.Subcategory1).Distinct();
+            return catagories.ToList();
         }
 
-        public List<MenuItem> getMenuSubcategoriesFromMenu(string Category, string menuName)
+        public List<string> getMenuSubcategoriesFromMenu(string Category, string menuName)
         {
-            throw new NotImplementedException();
+            List<MenuItem> returnList = new List<MenuItem>();
+            CrystalMenuDataContext db = new CrystalMenuDataContext();
+            var mainMenu = from p in db.Menus
+                           where p.Name == menuName
+                           select p;
+            if (mainMenu.Count() == 0) return new List<string>();
+            int ID = mainMenu.First().ID;
+            var catagories = (from p in db.MenuItems
+                              where p.MenuID == ID &&
+                              p.Category1 == Category
+                              select p.Subcategory1).Distinct();
+            return catagories.ToList();
         }
 
         #endregion

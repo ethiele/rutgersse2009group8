@@ -1,0 +1,9 @@
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\bin\Debug\CrystalMenuClient.exe.config
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\bin\Debug\CrystalMenuClient.exe
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\bin\Debug\CrystalMenuClient.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\obj\Debug\CrystalMenuClient.Form1.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\obj\Debug\CrystalMenuClient.Properties.Resources.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\obj\Debug\CrystalMenuClient.csproj.GenerateResource.Cache
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\obj\Debug\CrystalMenuClient.exe
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CrystalMenuClient\obj\Debug\CrystalMenuClient.pdb

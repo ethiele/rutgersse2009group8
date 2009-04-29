@@ -1,0 +1,16 @@
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\bin\Debug\CRySTALClient.exe.config
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\bin\Debug\CRySTALClient.exe
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\bin\Debug\CRySTALClient.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.LoginForm.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.ModeSelection.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.Properties.Resources.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.csproj.GenerateResource.Cache
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.exe
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.HostView.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.SelectWaiter.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.WaiterView.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.CreateFoodOrder.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.SelectJobRole.resources
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALClient\obj\Debug\CRySTALClient.TimeCard.resources

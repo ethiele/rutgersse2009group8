@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="95d514cb-22be-421e-a93e-f967b34a4620" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/MenuService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="df2d65cb-8c01-45b8-91a9-5d2d7c425479" SourceId="1" SourceUrl="http://localhost:8000/MenuService/?xsd=xsd1" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="0be231e7-815e-40db-9e98-b1cc93859553" SourceId="1" SourceUrl="http://localhost:8000/MenuService/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="17609407-429e-408d-a115-05d4f07e2c9e" SourceId="1" SourceUrl="http://localhost:8000/MenuService/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="5df0250d-8c63-416f-95da-cbc357e4dc73" SourceId="1" SourceUrl="http://localhost:8000/MenuService/?xsd=xsd3" />
+    <MetadataFile FileName="MenuService.wsdl" MetadataType="Wsdl" ID="4adaf015-9d56-42d4-a2a3-4175e052efaf" SourceId="1" SourceUrl="http://localhost:8000/MenuService/?wsdl" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="5268e78a-66a0-4055-8ae4-4c989cd44a86" SourceId="1" SourceUrl="http://localhost:8000/MenuService/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

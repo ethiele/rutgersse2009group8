@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="CRySTAL" Class="CrystalTablesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ETHIELE-LENOVO\SQLEXPRESS;Initial Catalog=CRySTAL;Integrated Security=True" SettingsObjectName="CRySTALDataConnections.Properties.Settings" SettingsPropertyName="CRySTALConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TablesTbl" Member="TablesTbls">
+    <Type Name="TablesTbl">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Room" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Seating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

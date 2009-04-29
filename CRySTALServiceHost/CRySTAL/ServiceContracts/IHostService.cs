@@ -13,7 +13,9 @@ namespace CRySTAL
         Dictionary<TableTypes, List<Int32>> GetTables(string sessionID);
         [OperationContract]
         Dictionary<TableTypes, List<Int32>> GetFreeTablesAt(string sessionID, DateTime time);
-
-
+        [OperationContract]
+        void AssignTableTo(string sessionID, int table, int employeeID);
+        [OperationContract]
+        List<BasicEmployee> GetWaitersOnDuty(string sessionID);
     }
 }

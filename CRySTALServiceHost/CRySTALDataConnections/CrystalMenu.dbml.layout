@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CrystalMenu">
+  <DataContextMoniker Name="/CrystalMenuDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9ce7c34b-1bc7-4455-9788-da6b76a7dac7" absoluteBounds="0.5, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CrystalMenuDataContext/Menus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7af5b13f-0436-4414-8359-60c8be247e81" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c86716ca-2a07-4dd8-91d2-1d03af176f4d" absoluteBounds="0.5, 2.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/CrystalMenuDataContext/MenuItems" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf71b1bc-b92e-43fd-9822-27a0ec662f20" absoluteBounds="0.51500000000000012, 3.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

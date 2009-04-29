@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="697f3cec-0c62-4fa0-91c8-790b07a23ece" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/WaiterService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="4937422e-3da7-4ade-8e49-b3c2322fb782" SourceId="1" SourceUrl="http://localhost:8000/WaiterService/?xsd=xsd3" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="d14e6480-e356-405f-8735-2cfd811d9b2a" SourceId="1" SourceUrl="http://localhost:8000/WaiterService/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="143007b4-3764-4eb1-851a-e823aa0f8411" SourceId="1" SourceUrl="http://localhost:8000/WaiterService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="ccc650df-7339-49fd-bfea-595e7bf5c505" SourceId="1" SourceUrl="http://localhost:8000/WaiterService/?xsd=xsd0" />
+    <MetadataFile FileName="WaiterService.wsdl" MetadataType="Wsdl" ID="45e25083-599d-4833-976c-fec28fbcc22f" SourceId="1" SourceUrl="http://localhost:8000/WaiterService/?wsdl" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="4d9b8e8b-1f97-4d26-b29d-9d3a0bba18be" SourceId="1" SourceUrl="http://localhost:8000/WaiterService/?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="355fc50e-f165-4c1f-8149-410a4a2aebd8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/TimeCardService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TimeCardService.wsdl" MetadataType="Wsdl" ID="c0341bcc-519f-45c9-8344-2117c92675db" SourceId="1" SourceUrl="http://localhost:8000/TimeCardService/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="4515a98a-f2b3-4af9-b5c0-e5579b903815" SourceId="1" SourceUrl="http://localhost:8000/TimeCardService/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="dae945ed-1cd3-48b6-9011-b6f0a9bdc6e9" SourceId="1" SourceUrl="http://localhost:8000/TimeCardService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="81b737cc-ef15-469c-8e93-57939cab67dc" SourceId="1" SourceUrl="http://localhost:8000/TimeCardService/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="0b2c09c2-ac36-47b6-9bc5-c8e863ce1948" SourceId="1" SourceUrl="http://localhost:8000/TimeCardService/?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b8e69a19-b53a-4b53-9a6f-137ac17e84c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/ManagerService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="3cd513bc-c290-4299-83fb-c01393264266" SourceId="1" SourceUrl="http://localhost:8000/ManagerService/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="26963aae-5e01-43e2-aae5-c0065d1cdad8" SourceId="1" SourceUrl="http://localhost:8000/ManagerService/?disco" />
+    <MetadataFile FileName="ManagerService.wsdl" MetadataType="Wsdl" ID="44fca431-4b32-411d-9be5-0ba69d858c37" SourceId="1" SourceUrl="http://localhost:8000/ManagerService/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="67a9b7f7-3d95-451b-aa65-d21d88e76f48" SourceId="1" SourceUrl="http://localhost:8000/ManagerService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="6c4bc96d-cc95-494f-b135-df347b65a9f5" SourceId="1" SourceUrl="http://localhost:8000/ManagerService/?xsd=xsd0" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="3625366a-0c35-42cd-9c0a-7fa227d40ab6" SourceId="1" SourceUrl="http://localhost:8000/ManagerService/?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

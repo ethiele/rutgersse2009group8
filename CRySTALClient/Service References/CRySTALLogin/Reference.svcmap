@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a2f0c078-9e98-4fb9-aa77-1c96053b1175" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/LoginService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="3d75f44b-9094-41cd-999c-84e5888d1486" SourceId="1" SourceUrl="http://localhost:8000/LoginService/?xsd=xsd1" />
+    <MetadataFile FileName="LoginService.wsdl" MetadataType="Wsdl" ID="067d725e-e668-4eb2-8f8c-0fe120c3e336" SourceId="1" SourceUrl="http://localhost:8000/LoginService/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="2201b2c9-d697-45d1-87d5-8474be39f3b4" SourceId="1" SourceUrl="http://localhost:8000/LoginService/?xsd=xsd3" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="575402d7-8b95-4527-b865-5a196cc7aab0" SourceId="1" SourceUrl="http://localhost:8000/LoginService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="5971ea94-41eb-4fc5-94c6-5fb52b3c20df" SourceId="1" SourceUrl="http://localhost:8000/LoginService/?disco" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="db4de1d0-8ca4-4746-adea-e6b706a8a1fa" SourceId="1" SourceUrl="http://localhost:8000/LoginService/?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
