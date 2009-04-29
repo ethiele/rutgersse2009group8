@@ -15,6 +15,9 @@ namespace CRySTAL
         [OperationContract]
         bool StampShiftEnd(string sessionID);
 
+        [OperationBehavior]
+        bool CanStampOut(string sessionID);
+
         [OperationContract]
         List<ShiftData> GetLastWeeksShifts(string sessionID);
     }

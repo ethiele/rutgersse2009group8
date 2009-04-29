@@ -38,6 +38,17 @@ namespace CRySTAL
             }
         }
 
+        public bool CanStampOut(string sessionID)
+        {
+            WorkerShiftsTableAdapter wta = new WorkerShiftsTableAdapter();
+            var lastStartTime = wta.GetDataByEmployeeID(Auth.getEmployeeID(sessionID), DateTime.Now.Subtract(new TimeSpan(1, 0, 0, 0))).First();
+            if (lastStartTime == null || !lastStartTime.IsEndTimeNull())
+            {
+                return false;
+            }
+            return true;
+        }
+
         public List<ShiftData> GetLastWeeksShifts(string sessionID)
         {
             WorkerShiftsTableAdapter wta = new WorkerShiftsTableAdapter();
