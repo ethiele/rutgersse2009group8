@@ -10,7 +10,7 @@
     WindowStyle="None" 
     Background="Transparent"      
     ResizeMode="CanResizeWithGrip"
-    AllowsTransparency="True" Height="388" Width="498"
+    AllowsTransparency="True" Height="388" Width="550"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Loaded="Window_Loaded">
     <Grid>
@@ -30,6 +30,8 @@
                                                 DisplayMemberBinding="{Binding id}"/>
                                 <GridViewColumn Width="100" Header="Employee Name"
                                                 DisplayMemberBinding="{Binding name}"/>
+                                <GridViewColumn Width="100" Header="Username"
+                                                DisplayMemberBinding="{Binding username}"/>
                                 <GridViewColumn Width="100" Header="Role"
                                                 DisplayMemberBinding="{Binding role}"/>
                             </GridView>
@@ -52,7 +54,8 @@
                             <tk:DatePicker Name="ShiftsEndDate"></tk:DatePicker>
                             <Button Name="ShowTransactions" Click="ShowShifts_Click" >Show</Button>
                         </StackPanel>
-                        <ListView Name="ShiftData" Grid.Row="1" ItemsSource="{Binding employees}">
+                        <ListView Name="ShiftData" Grid.Row="1" ItemsSource="{Binding employees}"
+                                  MouseDoubleClick="ShiftData_MouseDoubleClick">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Width="50" Header="EmployeeID" 
@@ -69,25 +72,40 @@
                                                 DisplayMemberBinding="{Binding hours}"/>
                                 </GridView>
                             </ListView.View>
+                            <ListView.ContextMenu>
+                                <ContextMenu Opacity=".90">
+                                    <MenuItem Name="AddShiftContextMenu" Header="Add Shift..." Click="MenuItem_Click"></MenuItem>
+                                    <MenuItem Name="EditShiftContextMenu" Header="Edit Shift..." Click="EditShiftContextMenu_Click"></MenuItem>
+                                    <MenuItem Name="RemoveShiftContextMenu" Header="Remove Shift" Click="RemoveShiftContextMenu_Click"></MenuItem>
+                                    <MenuItem Name="PrintShifts" Header="Print..." Click="PrintShifts_Click"></MenuItem>
+                                </ContextMenu>
+                            </ListView.ContextMenu>
                         </ListView>
                     </Grid>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
-                        Payrole
+                        Payroll
                     </TabItem.Header>
-                    <ListView Name="PayroalData" ItemsSource="{Binding employees}">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Width="50" Header="EmployeeID" 
-                                                DisplayMemberBinding="{Binding id}"/>
-                                <GridViewColumn Width="100" Header="Employee Name"
-                                                DisplayMemberBinding="{Binding name}"/>
-                                <GridViewColumn Width="100" Header="Role"
-                                                DisplayMemberBinding="{Binding role}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Label>Start Date:</Label>
+                            <tk:DatePicker Name="PayroleStart"></tk:DatePicker>
+                            <Label>End Date:</Label>
+                            <tk:DatePicker Name="PayroleEnd"></tk:DatePicker>
+                            <Button Name="ShowPayrole" Click="ShowPayrole_Click" >Show</Button>
+                            <Button Name="printPayroll" Click="printPayroll_Click">Print</Button>
+                        </StackPanel>
+                        <ScrollViewer Grid.Row="1">
+                            <StackPanel Name="PayroleStack" CanVerticallyScroll="True">
+
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
@@ -128,6 +146,23 @@
                     <TabItem.Header>
                         Menu
                     </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox Name="MenuList" Width="200" />
+                            <Button Name="ShowMenu" Content="Show" Click="ShowMenu_Click"/>
+                            <Button Name="NewMenu" Content="New Menu" Click="NewMenu_Click"/>
+                            <Button Name="RemoveMenu" Content="Remove Menu" Click="RemoveMenu_Click"/>
+                        </StackPanel>
+                        <ScrollViewer Grid.Row="1">
+                            <StackPanel Name="MenuStack" Orientation="Vertical" >
+                                
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
@@ -140,10 +175,20 @@
                                                 DisplayMemberBinding="{Binding id}"/>
                                 <GridViewColumn Width="150" Header="Employee Name"
                                                 DisplayMemberBinding="{Binding name}"/>
+                                <GridViewColumn Width="100" Header="Username"
+                                                DisplayMemberBinding="{Binding username}"/>
                                 <GridViewColumn Width="200" Header="Roles"
                                                 DisplayMemberBinding="{Binding role}"/>
                             </GridView>
                         </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Name="AddUsr" Header="Add User..." Click="AddUsr_Click" />
+                                <MenuItem Name="RemoveUsr" Header="Remove User" Click="RemoveUsr_Click" />
+                                <MenuItem Name="ChangePassword" Header="Change Password..." Click="ChangePassword_Click" />
+                                
+                            </ContextMenu>
+                        </ListView.ContextMenu>
                     </ListView>
                 </TabItem>
                 <TabItem>
@@ -152,19 +197,43 @@
                     </TabItem.Header>
                     <d3:ChartPlotter Name="plotter">
                         <d3:Header TextBlock.FontSize="20">
-                            Very simple chart
+                            Income and Expence (past 30 days)
                         </d3:Header>
 
-                        <d3:VerticalAxisTitle>Sine value</d3:VerticalAxisTitle>
-                        <d3:HorizontalAxisTitle>Sine argument</d3:HorizontalAxisTitle>
+                        <d3:VerticalAxisTitle>Money</d3:VerticalAxisTitle >
+                        <d3:HorizontalAxisTitle>Day</d3:HorizontalAxisTitle>
                     </d3:ChartPlotter>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
                         Orders Summery
                     </TabItem.Header>
-                    <Grid Name="OrdersSummery">
-                        
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Label>Start Date:</Label>
+                            <tk:DatePicker Name="OrderSumStart"></tk:DatePicker>
+                            <Label>End Date:</Label>
+                            <tk:DatePicker Name="OrderSumEnd"></tk:DatePicker>
+                            <Button Name="ShowOrderSum" Click="ShowOrderSum_Click" >Show</Button>
+                        </StackPanel>
+                        <ListView Name="OrderSumDisplay" Grid.Row="1" ItemsSource="{Binding employees}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="150" Header="Item Name" 
+                                                DisplayMemberBinding="{Binding itemName}"/>
+                                    <GridViewColumn Width="100" Header="Number Sold"
+                                                DisplayMemberBinding="{Binding totalAmountSold}"/>
+                                    <GridViewColumn Width="100" Header="Income Per Unit"
+                                                DisplayMemberBinding="{Binding cost}"/>
+                                    <GridViewColumn Width="100" Header="total Income"
+                                                DisplayMemberBinding="{Binding totalAmount}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
                     </Grid>
                 </TabItem>
             </TabControl>

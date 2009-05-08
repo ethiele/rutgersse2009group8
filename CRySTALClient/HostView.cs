@@ -69,23 +69,24 @@ namespace CRySTALClient
             tableStatus = hsc.GetTables(sessionID);
             foreach (int i in tableStatus[CRySTALClient.CrystalHost.TableTypes.Clean])
             {
-                tableButtons[i - 1].BackColor = Color.LightGreen;
+
+                 if (i < 6)   tableButtons[i - 1].BackColor = Color.LightGreen;
             }
             foreach (int i in tableStatus[CRySTALClient.CrystalHost.TableTypes.InUse])
             {
-                tableButtons[i - 1].BackColor = Color.LightBlue;
+                if (i < 6) tableButtons[i - 1].BackColor = Color.LightBlue;
             }
             foreach (int i in tableStatus[CRySTALClient.CrystalHost.TableTypes.Dirty])
             {
-                tableButtons[i - 1].BackColor = Color.Red;
+                if (i < 6) tableButtons[i - 1].BackColor = Color.Red;
             }
             foreach (int i in tableStatus[CRySTALClient.CrystalHost.TableTypes.Cleaning])
             {
-                tableButtons[i - 1].BackColor = Color.Orange;
+                if (i < 6) tableButtons[i - 1].BackColor = Color.Orange;
             }
             foreach (int i in tableStatus[CRySTALClient.CrystalHost.TableTypes.CannotBeUsed])
             {
-                tableButtons[i - 1].BackColor = Color.Gray;
+                if (i < 6) tableButtons[i - 1].BackColor = Color.Gray;
             }
             hsc.Close();
 

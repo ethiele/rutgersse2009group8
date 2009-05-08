@@ -1,8 +1,45 @@
 ﻿<Window x:Class="CRySTALManager.EditShift"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="EditShift" Height="300" Width="300">
+    xmlns:tk="http://schemas.microsoft.com/wpf/2008/toolkit"
+    xmlns:local="http://schemas.AvalonControls/AvalonControlsLibrary/Controls"
+        WindowStyle="ToolWindow"
+    Title="EditShift" Height="173" Width="350" Loaded="Window_Loaded">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         
+                <Label Grid.Row="0" Grid.Column="0">Shift Start:</Label>
+                <tk:DatePicker Grid.Row="0" Grid.Column="1" Name="StartDate"></tk:DatePicker>
+                <local:TimePicker Grid.Row="0" Grid.Column="2" Name="StartTime" VerticalAlignment="Top"
+                          BorderBrush="Silver" BorderThickness="1" 
+                          FontFamily="Verdana" FontSize="12" SelectedHour="11" 
+                          SelectedMinute="20" SelectedSecond="30" />
+
+        
+                <Label Grid.Row="1" Grid.Column="0">Shift End:</Label>
+                <tk:DatePicker Grid.Row="1" Grid.Column="1"  Name="EndDate"></tk:DatePicker>
+                <local:TimePicker Grid.Row="1" Grid.Column="2" Name="EndTime" VerticalAlignment="Top"
+                          BorderBrush="Silver" BorderThickness="1" 
+                          FontFamily="Verdana" FontSize="12" SelectedHour="11" 
+                          SelectedMinute="20" SelectedSecond="30" />
+
+                <Label Grid.Row="2" Grid.Column="0">Role:</Label>
+                <TextBox Grid.Row="2" Grid.Column="1" Name="RoleTxt"></TextBox>
+             
+                <Label Grid.Row="3" Grid.Column="0">Employee:</Label>
+                <ComboBox Grid.Row="3" Grid.Column="1" Name="EmployeeSelection"></ComboBox>
+        
+            <Button Grid.Row="5" Grid.Column="2" Click="Button_Click">Done</Button>
     </Grid>
 </Window>

@@ -18,3 +18,14 @@ C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\bi
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\bin\Debug\WPFToolkit.pdb
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\ShowBill.baml
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\ShowBill.g.cs
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\bin\Debug\AvalonControlsLibrary.dll
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\bin\Debug\AvalonControlsLibrary.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\bin\Debug\AvalonControlsLibrary.xml
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\EditShift.baml
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\EditShift.g.cs
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\NewEmployee.baml
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\NewEmployee.g.cs
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\TextInputDialog.baml
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\TextInputDialog.g.cs
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\EditMenuItem.baml
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALManager\obj\Debug\EditMenuItem.g.cs

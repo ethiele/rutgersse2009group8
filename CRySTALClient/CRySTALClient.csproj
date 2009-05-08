@@ -288,6 +288,9 @@
     <None Include="Service References\CRySTALTimeCard\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\CrystalHost\CRySTALClient.CrystalHost.Reservation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CRySTALTimeCard\CRySTALClient.CRySTALTimeCard.ShiftData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

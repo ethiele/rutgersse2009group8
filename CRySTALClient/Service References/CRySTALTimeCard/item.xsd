@@ -28,6 +28,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CanStampOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanStampOutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CanStampOutResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetLastWeeksShifts">
     <xs:complexType>
       <xs:sequence>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CRySTALManager
 {
-    class shiftsShow
+    public class shiftsShow
     {
         private string _name;
 
@@ -49,6 +49,12 @@ namespace CRySTALManager
             get { return _hours; }
             set { _hours = value; }
         }
+        private int _employeeId;
+        public int employeeId
+        {
+            get { return _employeeId; }
+            set { _employeeId = value; }
+        }
         
 
 
@@ -56,7 +62,7 @@ namespace CRySTALManager
         {
         }
         public shiftsShow(string _name, int _id, string _role, DateTime _startTime,
-            DateTime? _endTime, decimal _hours)
+            DateTime? _endTime, decimal _hours, int empID)
         {
             name = _name;
             id = _id;
@@ -64,6 +70,7 @@ namespace CRySTALManager
             startTime = _startTime;
             endTime = _endTime;
             hours = _hours;
+            _employeeId = empID;
         }
     
     }

@@ -13,6 +13,7 @@
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BasicEmployee" nillable="true" type="tns:BasicEmployee" />
@@ -44,6 +45,7 @@
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
       <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roles" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EmployeeData" nillable="true" type="tns:EmployeeData" />
@@ -88,4 +90,75 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BillItem" nillable="true" type="tns:BillItem" />
+  <xs:complexType name="PayroleReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Employees" nillable="true" type="tns:ArrayOfEmployeePayout" />
+      <xs:element minOccurs="0" name="EndReportTimeframe" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartReportTimeframe" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalPayout" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayroleReport" nillable="true" type="tns:PayroleReport" />
+  <xs:complexType name="ArrayOfEmployeePayout">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeePayout" nillable="true" type="tns:EmployeePayout" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeePayout" nillable="true" type="tns:ArrayOfEmployeePayout" />
+  <xs:complexType name="EmployeePayout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRolePayout" />
+      <xs:element minOccurs="0" name="TotalPayment" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeePayout" nillable="true" type="tns:EmployeePayout" />
+  <xs:complexType name="ArrayOfRolePayout">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolePayout" nillable="true" type="tns:RolePayout" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolePayout" nillable="true" type="tns:ArrayOfRolePayout" />
+  <xs:complexType name="RolePayout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HoursWorked" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalPayment" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolePayout" nillable="true" type="tns:RolePayout" />
+  <xs:simpleType name="StatObject">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Income" />
+      <xs:enumeration value="PayroleExpence" />
+      <xs:enumeration value="TotalItemsOrdered" />
+      <xs:enumeration value="ItemOrdered" />
+      <xs:enumeration value="ItemOrderCost" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatObject" nillable="true" type="tns:StatObject" />
+  <xs:simpleType name="StatType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ForEachDay" />
+      <xs:enumeration value="ForEachHourInDay" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatType" nillable="true" type="tns:StatType" />
+  <xs:complexType name="ArrayOfItemSalesSummery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemSalesSummery" nillable="true" type="tns:ItemSalesSummery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemSalesSummery" nillable="true" type="tns:ArrayOfItemSalesSummery" />
+  <xs:complexType name="ItemSalesSummery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="itemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="totalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalAmountSold" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemSalesSummery" nillable="true" type="tns:ItemSalesSummery" />
 </xs:schema>

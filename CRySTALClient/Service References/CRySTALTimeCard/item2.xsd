@@ -12,6 +12,7 @@
       <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HoursWorked" type="xs:decimal" />
       <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShiftID" type="xs:int" />
       <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>

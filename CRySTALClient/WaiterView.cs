@@ -73,7 +73,7 @@ namespace CRySTALClient
             if (listBox2.SelectedIndex != -1)
             {
                 CRySTALWaiter.WaiterServiceClient wc = new CRySTALClient.CRySTALWaiter.WaiterServiceClient();
-                wc.MarkPaied(sessionID, paymentTbls[listBox2.SelectedIndex]);
+                wc.MarkPaid(sessionID, paymentTbls[listBox2.SelectedIndex]);
                 wc.Close();
                 updateView();
             }

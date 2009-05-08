@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AvalonControlsLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Programing\AvalonControlLib\Release V2\AvalonControlsLibrary\AvalonControlsLibrary\bin\Debug\AvalonControlsLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="DynamicDataDisplay, Version=0.2.1.401, Culture=neutral, PublicKeyToken=5b7d744a7263923f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Programing\DynamicDataDisplay 0.2.1 Release\DynamicDataDisplay.dll</HintPath>
@@ -74,11 +78,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="EditMenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditShift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowBill.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextInputDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,8 +117,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustTimeData.cs" />
+    <Compile Include="EditMenuItem.xaml.cs">
+      <DependentUpon>EditMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditShift.xaml.cs">
+      <DependentUpon>EditShift.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmployee.xaml.cs">
+      <DependentUpon>NewEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -123,9 +152,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\CRySTALMenu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="shiftsShow.cs" />
     <Compile Include="ShowBill.xaml.cs">
       <DependentUpon>ShowBill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TextInputDialog.xaml.cs">
+      <DependentUpon>TextInputDialog.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,6 +183,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CRySTALLogin\" />
     <WCFMetadataStorage Include="Service References\CRySTALManagerService\" />
+    <WCFMetadataStorage Include="Service References\CRySTALMenu\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CRySTALManagerService\item.disco" />
@@ -192,8 +230,34 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\CRySTALManagerService\CRySTALManager.CRySTALManagerService.PayroleReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CRySTALManagerService\CRySTALManager.CRySTALManagerService.Transaction.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRySTALMenu\item.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRySTALMenu\item.disco" />
+    <None Include="Service References\CRySTALMenu\item1.xsd" />
+    <None Include="Service References\CRySTALMenu\item2.xsd" />
+    <None Include="Service References\CRySTALMenu\item3.xsd" />
+    <None Include="Service References\CRySTALMenu\MenuService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRySTALMenu\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRySTALManagerService\CRySTALManager.CRySTALManagerService.ItemSalesSummery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRySTALMenu\CRySTALManager.CRySTALMenu.MenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRySTALMenu\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

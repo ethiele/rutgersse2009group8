@@ -33,6 +33,7 @@
       <xs:enumeration value="outForDelevering" />
       <xs:enumeration value="returned" />
       <xs:enumeration value="orderServed" />
+      <xs:enumeration value="orderCanceled" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="FoodOrder.OrderStatusList" nillable="true" type="tns:FoodOrder.OrderStatusList" />

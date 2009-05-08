@@ -70,7 +70,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="MarkPaied">
+  <xs:element name="MarkPaid">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sessionID" nillable="true" type="xs:string" />
@@ -78,7 +78,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="MarkPaiedResponse">
+  <xs:element name="MarkPaidResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

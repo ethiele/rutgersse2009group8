@@ -31,6 +31,9 @@ namespace CRySTALManager.CRySTALManagerService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string roleField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string usernameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -76,6 +79,19 @@ namespace CRySTALManager.CRySTALManagerService {
                 if ((object.ReferenceEquals(this.roleField, value) != true)) {
                     this.roleField = value;
                     this.RaisePropertyChanged("role");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.usernameField, value) != true)) {
+                    this.usernameField = value;
+                    this.RaisePropertyChanged("username");
                 }
             }
         }
@@ -233,6 +249,9 @@ namespace CRySTALManager.CRySTALManagerService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] rolesField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string usernameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -278,6 +297,19 @@ namespace CRySTALManager.CRySTALManagerService {
                 if ((object.ReferenceEquals(this.rolesField, value) != true)) {
                     this.rolesField = value;
                     this.RaisePropertyChanged("roles");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.usernameField, value) != true)) {
+                    this.usernameField = value;
+                    this.RaisePropertyChanged("username");
                 }
             }
         }
@@ -603,6 +635,409 @@ namespace CRySTALManager.CRySTALManagerService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PayroleReport", Namespace="http://schemas.datacontract.org/2004/07/CRySTAL")]
+    [System.SerializableAttribute()]
+    public partial class PayroleReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private CRySTALManager.CRySTALManagerService.EmployeePayout[] EmployeesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime EndReportTimeframeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime StartReportTimeframeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalPayoutField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CRySTALManager.CRySTALManagerService.EmployeePayout[] Employees {
+            get {
+                return this.EmployeesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeesField, value) != true)) {
+                    this.EmployeesField = value;
+                    this.RaisePropertyChanged("Employees");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime EndReportTimeframe {
+            get {
+                return this.EndReportTimeframeField;
+            }
+            set {
+                if ((this.EndReportTimeframeField.Equals(value) != true)) {
+                    this.EndReportTimeframeField = value;
+                    this.RaisePropertyChanged("EndReportTimeframe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime StartReportTimeframe {
+            get {
+                return this.StartReportTimeframeField;
+            }
+            set {
+                if ((this.StartReportTimeframeField.Equals(value) != true)) {
+                    this.StartReportTimeframeField = value;
+                    this.RaisePropertyChanged("StartReportTimeframe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalPayout {
+            get {
+                return this.TotalPayoutField;
+            }
+            set {
+                if ((this.TotalPayoutField.Equals(value) != true)) {
+                    this.TotalPayoutField = value;
+                    this.RaisePropertyChanged("TotalPayout");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeePayout", Namespace="http://schemas.datacontract.org/2004/07/CRySTAL")]
+    [System.SerializableAttribute()]
+    public partial class EmployeePayout : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EmployeeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmployeeNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private CRySTALManager.CRySTALManagerService.RolePayout[] RolesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalPaymentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int EmployeeID {
+            get {
+                return this.EmployeeIDField;
+            }
+            set {
+                if ((this.EmployeeIDField.Equals(value) != true)) {
+                    this.EmployeeIDField = value;
+                    this.RaisePropertyChanged("EmployeeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EmployeeName {
+            get {
+                return this.EmployeeNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeeNameField, value) != true)) {
+                    this.EmployeeNameField = value;
+                    this.RaisePropertyChanged("EmployeeName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CRySTALManager.CRySTALManagerService.RolePayout[] Roles {
+            get {
+                return this.RolesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RolesField, value) != true)) {
+                    this.RolesField = value;
+                    this.RaisePropertyChanged("Roles");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalPayment {
+            get {
+                return this.TotalPaymentField;
+            }
+            set {
+                if ((this.TotalPaymentField.Equals(value) != true)) {
+                    this.TotalPaymentField = value;
+                    this.RaisePropertyChanged("TotalPayment");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RolePayout", Namespace="http://schemas.datacontract.org/2004/07/CRySTAL")]
+    [System.SerializableAttribute()]
+    public partial class RolePayout : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal HoursWorkedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal RateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RoleNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalPaymentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal HoursWorked {
+            get {
+                return this.HoursWorkedField;
+            }
+            set {
+                if ((this.HoursWorkedField.Equals(value) != true)) {
+                    this.HoursWorkedField = value;
+                    this.RaisePropertyChanged("HoursWorked");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Rate {
+            get {
+                return this.RateField;
+            }
+            set {
+                if ((this.RateField.Equals(value) != true)) {
+                    this.RateField = value;
+                    this.RaisePropertyChanged("Rate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RoleName {
+            get {
+                return this.RoleNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RoleNameField, value) != true)) {
+                    this.RoleNameField = value;
+                    this.RaisePropertyChanged("RoleName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalPayment {
+            get {
+                return this.TotalPaymentField;
+            }
+            set {
+                if ((this.TotalPaymentField.Equals(value) != true)) {
+                    this.TotalPaymentField = value;
+                    this.RaisePropertyChanged("TotalPayment");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StatObject", Namespace="http://schemas.datacontract.org/2004/07/CRySTAL")]
+    public enum StatObject : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Income = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PayroleExpence = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TotalItemsOrdered = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ItemOrdered = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ItemOrderCost = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StatType", Namespace="http://schemas.datacontract.org/2004/07/CRySTAL")]
+    public enum StatType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ForEachDay = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ForEachHourInDay = 1,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ItemSalesSummery", Namespace="http://schemas.datacontract.org/2004/07/CRySTAL")]
+    [System.SerializableAttribute()]
+    public partial class ItemSalesSummery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal costField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string itemNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal totalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int totalAmountSoldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal cost {
+            get {
+                return this.costField;
+            }
+            set {
+                if ((this.costField.Equals(value) != true)) {
+                    this.costField = value;
+                    this.RaisePropertyChanged("cost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string itemName {
+            get {
+                return this.itemNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.itemNameField, value) != true)) {
+                    this.itemNameField = value;
+                    this.RaisePropertyChanged("itemName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal totalAmount {
+            get {
+                return this.totalAmountField;
+            }
+            set {
+                if ((this.totalAmountField.Equals(value) != true)) {
+                    this.totalAmountField = value;
+                    this.RaisePropertyChanged("totalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int totalAmountSold {
+            get {
+                return this.totalAmountSoldField;
+            }
+            set {
+                if ((this.totalAmountSoldField.Equals(value) != true)) {
+                    this.totalAmountSoldField = value;
+                    this.RaisePropertyChanged("totalAmountSold");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRySTALManagerService.IManagerService")]
     public interface IManagerService {
@@ -642,6 +1077,15 @@ namespace CRySTALManager.CRySTALManagerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManagerService/GetTransactions", ReplyAction="http://tempuri.org/IManagerService/GetTransactionsResponse")]
         CRySTALManager.CRySTALManagerService.Transaction[] GetTransactions(string sessionID, System.DateTime startTime, System.DateTime endTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManagerService/GetPayroleReport", ReplyAction="http://tempuri.org/IManagerService/GetPayroleReportResponse")]
+        CRySTALManager.CRySTALManagerService.PayroleReport GetPayroleReport(string sessionID, System.DateTime startTime, System.DateTime endTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManagerService/GetStatistics", ReplyAction="http://tempuri.org/IManagerService/GetStatisticsResponse")]
+        double[] GetStatistics(string sessionID, CRySTALManager.CRySTALManagerService.StatObject stat, CRySTALManager.CRySTALManagerService.StatType typeOfStat, int productID, System.DateTime start, System.DateTime end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IManagerService/GetTopSellers", ReplyAction="http://tempuri.org/IManagerService/GetTopSellersResponse")]
+        CRySTALManager.CRySTALManagerService.ItemSalesSummery[] GetTopSellers(string sessionID, System.DateTime start, System.DateTime end, int numberOfItems);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -717,6 +1161,18 @@ namespace CRySTALManager.CRySTALManagerService {
         
         public CRySTALManager.CRySTALManagerService.Transaction[] GetTransactions(string sessionID, System.DateTime startTime, System.DateTime endTime) {
             return base.Channel.GetTransactions(sessionID, startTime, endTime);
+        }
+        
+        public CRySTALManager.CRySTALManagerService.PayroleReport GetPayroleReport(string sessionID, System.DateTime startTime, System.DateTime endTime) {
+            return base.Channel.GetPayroleReport(sessionID, startTime, endTime);
+        }
+        
+        public double[] GetStatistics(string sessionID, CRySTALManager.CRySTALManagerService.StatObject stat, CRySTALManager.CRySTALManagerService.StatType typeOfStat, int productID, System.DateTime start, System.DateTime end) {
+            return base.Channel.GetStatistics(sessionID, stat, typeOfStat, productID, start, end);
+        }
+        
+        public CRySTALManager.CRySTALManagerService.ItemSalesSummery[] GetTopSellers(string sessionID, System.DateTime start, System.DateTime end, int numberOfItems) {
+            return base.Channel.GetTopSellers(sessionID, start, end, numberOfItems);
         }
     }
 }

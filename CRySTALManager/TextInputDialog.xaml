@@ -1,0 +1,19 @@
+﻿<Window x:Class="CRySTALManager.TextInput"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="TextInput" Height="100" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="75" />
+        </Grid.ColumnDefinitions>
+        <Label Name="DispText" Grid.ColumnSpan="2" />
+        <TextBox Name="Resp" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+        <Button Name="OkBnt" Grid.Row="2" Grid.Column="1" Click="OkBnt_Click">Ok</Button>
+    </Grid>
+</Window>
