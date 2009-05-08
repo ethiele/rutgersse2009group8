@@ -1,0 +1,904 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CRySTAL</name>
+    </assembly>
+    <members>
+        <member name="T:CRySTAL.WorkflowInterface.WorkflowInterface">
+            <summary>
+            Used to provide all WCF services with access to the workflow interface
+            </summary>
+        </member>
+        <member name="T:CRySTAL.ICookService">
+            <summary>
+            Defines a WCF service that contains methods used by the cook client to accomplish the goals of the waiter cook
+            </summary>
+        </member>
+        <member name="M:CRySTAL.ICookService.GetAllFoodOrders(System.String)">
+            <summary>
+            Returns all non-completed food orders
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ICookService.GetNewFoodOrders(System.String)">
+            <summary>
+            Returns all food orders since the last time this function was called in
+            this session
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ICookService.MarkOrderAsComplete(System.Int32)">
+            <summary>
+            Marks the order as complete and has it sent out for delievery
+            </summary>
+            <param name="orderID">The ID of the order</param>
+        </member>
+        <member name="M:CRySTAL.ICookService.RejectOrder(System.Int32,System.String)">
+            <summary>
+            Marks the order as unable to complete, a reason must be provided 
+            </summary>
+            <param name="orderID">The ID of the order</param>
+            <param name="reason">A string sent to the waiter explaing why an order cannot be compleated</param>
+        </member>
+        <member name="T:CRySTAL.TimeCardService">
+            <summary>
+            Provides an implementation of the ITimeCardService
+            </summary>
+        </member>
+        <member name="T:CRySTAL.ITimeCardService">
+            <summary>
+            Defines a WCF service that contains methods used by all client to accomplish to recorde shift data
+            </summary>
+        </member>
+        <member name="M:CRySTAL.ITimeCardService.StampShiftStart(System.String,System.String)">
+            <summary>
+            Starts a new shift of the given logged in in the given role.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="role">The role.</param>
+        </member>
+        <member name="M:CRySTAL.ITimeCardService.StampShiftEnd(System.String)">
+            <summary>
+            Ends the shift of the given user if they are in a shift. 
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns>Returns true if the user's shift could be ended, else returns false</returns>
+        </member>
+        <member name="M:CRySTAL.ITimeCardService.CanStampOut(System.String)">
+            <summary>
+            Determines whether this instance can stamp out the current user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns>
+            	<c>true</c> if this instance can stamp out the current user; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:CRySTAL.ITimeCardService.GetLastWeeksShifts(System.String)">
+            <summary>
+            Gets the last weeks worth of shifts for the current user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.TimeCardService.StampShiftStart(System.String,System.String)">
+            <summary>
+            Starts a new shift of the given logged in in the given role.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="role">The role.</param>
+        </member>
+        <member name="M:CRySTAL.TimeCardService.StampShiftEnd(System.String)">
+            <summary>
+            Ends the shift of the given user if they are in a shift.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns>
+            Returns true if the user's shift could be ended, else returns false
+            </returns>
+        </member>
+        <member name="M:CRySTAL.TimeCardService.CanStampOut(System.String)">
+            <summary>
+            Determines whether this instance can stamp out the current user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns>
+            	<c>true</c> if this instance can stamp out the current user; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:CRySTAL.TimeCardService.GetLastWeeksShifts(System.String)">
+            <summary>
+            Gets the last weeks worth of shifts for the current user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="T:CRySTAL.HostService">
+            <summary>
+            Provides an implementation of the IHostService 
+            </summary>
+        </member>
+        <member name="T:CRySTAL.IHostService">
+            <summary>
+            Defines a WCF service that contains methods used by the host client to accomplish the goals of the host role
+            </summary>
+        </member>
+        <member name="M:CRySTAL.IHostService.GetTables(System.String)">
+            <summary>
+            Gets all tables.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IHostService.GetFreeTablesAt(System.String,System.DateTime)">
+            <summary>
+            Gets the free tables at a given time.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="time">The time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IHostService.AssignTableTo(System.String,System.Int32,System.Int32)">
+            <summary>
+            Assigns the table to a waiter.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="table">The table.</param>
+            <param name="employeeID">The employee ID of the waiter.</param>
+        </member>
+        <member name="M:CRySTAL.IHostService.GetWaitersOnDuty(System.String)">
+            <summary>
+            Gets all of the waiters on duty.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IHostService.MakeReservation(System.String,System.Int32,System.String,System.DateTime)">
+            <summary>
+            Makes a reservation.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="tblNumber">The table number.</param>
+            <param name="name">The name on the reservation.</param>
+            <param name="time">The time of hte reservatoin.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IHostService.BreakReservation(System.String,System.Int32)">
+            <summary>
+            Breaks the reservation.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="resId">The reservation id.</param>
+        </member>
+        <member name="M:CRySTAL.HostService.GetTables(System.String)">
+            <summary>
+            Gets all tables.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.HostService.GetFreeTablesAt(System.String,System.DateTime)">
+            <summary>
+            Gets the free tables at a given time.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="time">The time.</param>
+            <returns></returns>
+            <remarks>Not Currently Implemented</remarks>
+        </member>
+        <member name="M:CRySTAL.HostService.AssignTableTo(System.String,System.Int32,System.Int32)">
+            <summary>
+            Assigns the table to a waiter.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="table">The table.</param>
+            <param name="employeeID">The employee ID of the waiter.</param>
+        </member>
+        <member name="M:CRySTAL.HostService.GetWaitersOnDuty(System.String)">
+            <summary>
+            Gets all of the waiters on duty.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.HostService.MakeReservation(System.String,System.Int32,System.String,System.DateTime)">
+            <summary>
+            Makes a reservation.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="tblNumber">The table number.</param>
+            <param name="name">The name on the reservation.</param>
+            <param name="time">The time of hte reservation.</param>
+            <returns></returns>
+            <remarks>Not Currently Implmented</remarks>
+        </member>
+        <member name="M:CRySTAL.HostService.BreakReservation(System.String,System.Int32)">
+            <summary>
+            Breaks the reservation.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="resId">The reservation id.</param>
+            <remarks>Not Currently Implmented</remarks>
+        </member>
+        <member name="M:CRySTAL.HostService.GetReservations(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the reservations.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="start">The start date and time </param>
+            <param name="end">The end date and time</param>
+            <returns></returns>
+            <remarks>Not Currently Implmented</remarks>
+        </member>
+        <member name="T:CRySTAL.BusBoyService">
+            <summary>
+            Provides an implementation of the IBusBoyService 
+            </summary>
+        </member>
+        <member name="T:CRySTAL.IBusBoyService">
+            <summary>
+            Defines a WCF service that contains methods used by the busboy client to accomplish the goals of the waiter busboy
+            </summary>
+        </member>
+        <member name="M:CRySTAL.IBusBoyService.getAllFoodOrders(System.String)">
+            <summary>
+            Returns all food orders with a status of readyToDelever and outForDelivery
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IBusBoyService.getNewFoodOrders(System.String)">
+            <summary>
+            Returns all food orders with a status of readyToDelever and outForDelivery
+            that have been added since the last call to this method
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IBusBoyService.MarkOrder(System.String,System.Int32,CRySTAL.FoodOrder.OrderStatusList)">
+            <summary>
+            Sets the selected orders status
+            </summary>
+            <param name="orderNumber">The order number who's status you wish to set</param>
+            <param name="status">The status it is to be set to</param>
+        </member>
+        <member name="M:CRySTAL.IBusBoyService.getTables(System.String)">
+            <summary>
+            Gets all tables.
+            </summary>
+            <param name="sessionID">The session ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IBusBoyService.setTableStatus(System.String,System.Int32,CRySTAL.TableTypes)">
+            <summary>
+            Sets the table status.
+            </summary>
+            <param name="sessionID">The session ID.</param>
+            <param name="tbl">The table number.</param>
+            <param name="status">The new status of the table.</param>
+        </member>
+        <member name="M:CRySTAL.BusBoyService.getAllFoodOrders(System.String)">
+            <summary>
+            Returns all food orders with a status of readyToDelever and outForDelivery
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.BusBoyService.getNewFoodOrders(System.String)">
+            <summary>
+            Returns all food orders with a status of readyToDelever and outForDelivery
+            that have been added since the last call to this method
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+            <remarks>Not Currently Implemented</remarks>
+        </member>
+        <member name="M:CRySTAL.BusBoyService.MarkOrder(System.String,System.Int32,CRySTAL.FoodOrder.OrderStatusList)">
+            <summary>
+            Sets the selected orders status
+            </summary>
+            <param name="sessionID"></param>
+            <param name="orderNumber">The order number who's status you wish to set</param>
+            <param name="status">The status it is to be set to</param>
+        </member>
+        <member name="M:CRySTAL.BusBoyService.getTables(System.String)">
+            <summary>
+            Gets all tables.
+            </summary>
+            <param name="sessionID">The session ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.BusBoyService.setTableStatus(System.String,System.Int32,CRySTAL.TableTypes)">
+            <summary>
+            Sets the table status.
+            </summary>
+            <param name="sessionID">The session ID.</param>
+            <param name="tbl">The table number.</param>
+            <param name="status">The new status of the table.</param>
+        </member>
+        <member name="T:CRySTAL.WaiterService">
+            <summary>
+            Provides an implementation of the IWaiter
+            </summary>
+        </member>
+        <member name="T:CRySTAL.IWaiterService">
+            <summary>
+            Defines a WCF service that contains methods used by the waiter client to accomplish the goals of the waiter role
+            </summary>
+        </member>
+        <member name="M:CRySTAL.IWaiterService.PlaceOrder(System.String,CRySTAL.FoodOrder)">
+            <summary>
+            Places the order a new order, sends it to the cook and adds the items to the bill.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="order">The order to be placed.</param>
+        </member>
+        <member name="M:CRySTAL.IWaiterService.AddItemToBill(System.String,CRySTAL.FoodOrder)">
+            <summary>
+            Adds the item to bill and markes it as done. Does not send the order to the cook.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="order">The order to be added to the bill.</param>
+        </member>
+        <member name="M:CRySTAL.IWaiterService.GetReturnedOrders(System.String)">
+            <summary>
+            Gets the returned orders from the cook.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IWaiterService.GetCurrentTables(System.String)">
+            <summary>
+            Gets the current tables assigned to this waiter.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IWaiterService.GetInPaymentTables(System.String)">
+            <summary>
+            Gets the tables who have finished there order and who now need to pay
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IWaiterService.MarkPaid(System.String,System.Int32)">
+            <summary>
+            Marks the order as paid and marks the table to be cleaned.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="tblNumber">The table number.</param>
+        </member>
+        <member name="M:CRySTAL.IWaiterService.GetReceipt(System.String,System.Int32)">
+            <summary>
+            Gets the receipt.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="tblNumber">The table number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.WaiterService.throwSessionExp(System.String)">
+            <summary>
+            Throws the session exp.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+        </member>
+        <member name="M:CRySTAL.WaiterService.PlaceOrder(System.String,CRySTAL.FoodOrder)">
+            <summary>
+            Places the order a new order, sends it to the cook and adds the items to the bill.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="order">The order to be placed.</param>
+        </member>
+        <member name="M:CRySTAL.WaiterService.GetReturnedOrders(System.String)">
+            <summary>
+            Gets the returned orders from the cook.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.WaiterService.GetCurrentTables(System.String)">
+            <summary>
+            Gets the current tables assigned to this waiter.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.WaiterService.AddItemToBill(System.String,CRySTAL.FoodOrder)">
+            <summary>
+            Adds the item to bill and markes it as done. Does not send the order to the cook.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="order">The order to be added to the bill.</param>
+        </member>
+        <member name="M:CRySTAL.WaiterService.GetReceipt(System.String,System.Int32)">
+            <summary>
+            Gets the receipt.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="tblNumber">The table number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.WaiterService.GetInPaymentTables(System.String)">
+            <summary>
+            Gets the tables who have finished there order and who now need to pay
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.WaiterService.MarkPaid(System.String,System.Int32)">
+            <summary>
+            Marks the order as paid and marks the table to be cleaned.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="tblNumber">The table number.</param>
+        </member>
+        <member name="T:CRySTAL.WorkflowInterface.CustomerWorkflowInterface">
+            <summary>
+            Provides a class used to interact with the Workflow's from all WCF services
+            </summary>
+        </member>
+        <member name="T:CRySTAL.MenuService">
+            <summary>
+            Provides an implementation of the IMenuService
+            </summary>
+        </member>
+        <member name="T:CRySTAL.IMenuService">
+            <summary>
+            Defines a WCF service that contains methods used by the clients to access menu data
+            </summary>
+        </member>
+        <member name="M:CRySTAL.IMenuService.getAllMenuItems">
+            <summary>
+            Gets all menu items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IMenuService.getAllMenuItemsFromMenu(System.String)">
+            <summary>
+            Gets all menu items from a menu.
+            </summary>
+            <param name="menuName">Name of the menu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IMenuService.getMenuNames">
+            <summary>
+            Gets the menu names.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IMenuService.getMenuCategories">
+            <summary>
+            Gets the menu categories.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IMenuService.getMenuCategoriesFromMenu(System.String)">
+            <summary>
+            Gets the menu categories from a menu.
+            </summary>
+            <param name="menuName">Name of the menu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IMenuService.getMenuSubcategories(System.String)">
+            <summary>
+            Gets the menu subcategories.
+            </summary>
+            <param name="Category">The category.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IMenuService.getMenuSubcategoriesFromMenu(System.String,System.String)">
+            <summary>
+            Gets the menu subcategories from a menu.
+            </summary>
+            <param name="Category">The category.</param>
+            <param name="menuName">Name of the menu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.MenuService.getAllMenuItems">
+            <summary>
+            Gets all menu items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.MenuService.getAllMenuItemsFromMenu(System.String)">
+            <summary>
+            Gets all menu items from a menu.
+            </summary>
+            <param name="menuName">Name of the menu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.MenuService.getMenuNames">
+            <summary>
+            Gets the menu names.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.MenuService.getMenuCategories">
+            <summary>
+            Gets the menu categories.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.MenuService.getMenuCategoriesFromMenu(System.String)">
+            <summary>
+            Gets the menu categories from a menu.
+            </summary>
+            <param name="menuName">Name of the menu.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.MenuService.getMenuSubcategories(System.String)">
+            <summary>
+            Gets the menu subcategories.
+            </summary>
+            <param name="Category">The category.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.MenuService.getMenuSubcategoriesFromMenu(System.String,System.String)">
+            <summary>
+            Gets the menu subcategories from a menu.
+            </summary>
+            <param name="Category">The category.</param>
+            <param name="menuName">Name of the menu.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CRySTAL.LoginService">
+            <summary>
+            Provides an implementation of the ILoginService
+            </summary>
+        </member>
+        <member name="T:CRySTAL.ILoginService">
+            <summary>
+            Defines a WCF service that contains methods used by the clients to login and start new sessions with the server
+            </summary>
+        </member>
+        <member name="M:CRySTAL.ILoginService.LoginUser(System.String,System.String)">
+            <summary>
+            Attempts to login the user with a username and password
+            </summary>
+            <param name="username">The username</param>
+            <param name="password">The password</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:CRySTAL.ILoginService.LoginUserWithID(System.String,System.String,System.String)">
+            <summary>
+            Attempts to login the user via a security token such as an RFID tag or smartcard.
+            Requires the terminal's credentals
+            </summary>
+            <param name="terminalName"></param>
+            <param name="terminalPassword"></param>
+            <param name="uservalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.LoginService.LoginUser(System.String,System.String)">
+            <summary>
+            Attempts to login the user with a username and password
+            </summary>
+            <param name="username">The username</param>
+            <param name="password">The password</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.LoginService.LoginUserWithID(System.String,System.String,System.String)">
+            <summary>
+            Attempts to login the user via a security token such as an RFID tag or smartcard.
+            Requires the terminal's credentals
+            </summary>
+            <param name="terminalName"></param>
+            <param name="terminalPassword"></param>
+            <param name="uservalue"></param>
+            <returns></returns>
+            <remarks>Not Currently Implmented</remarks>
+        </member>
+        <member name="T:CRySTAL.Auth">
+            <summary>
+            Provides authentication related services
+            </summary>
+        </member>
+        <member name="T:CRySTAL.CookService">
+            <summary>
+            Provides an implementation of the ICookService 
+            </summary>
+        </member>
+        <member name="M:CRySTAL.CookService.GetAllFoodOrders(System.String)">
+            <summary>
+            Returns all non-completed food orders
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.CookService.GetNewFoodOrders(System.String)">
+            <summary>
+            Returns all food orders since the last time this function was called in
+            this session
+            </summary>
+            <param name="sessionID">The ID for this logged in session</param>
+            <returns></returns>
+            <remarks>Not Currently Implemented</remarks>
+        </member>
+        <member name="M:CRySTAL.CookService.MarkOrderAsComplete(System.Int32)">
+            <summary>
+            Marks the order as complete and has it sent out for delievery
+            </summary>
+            <param name="orderID">The ID of the order</param>
+        </member>
+        <member name="M:CRySTAL.CookService.RejectOrder(System.Int32,System.String)">
+            <summary>
+            Marks the order as unable to complete, a reason must be provided
+            </summary>
+            <param name="orderID">The ID of the order</param>
+            <param name="reason">A string sent to the waiter explaing why an order cannot be compleated</param>
+        </member>
+        <member name="T:CRySTAL.IManagerService">
+            <summary>
+            Defines a WCF service that contains methods used by the manager client to accomplish the goals of the manager role
+            </summary>
+        </member>
+        <member name="M:CRySTAL.IManagerService.GetAllEmployeesOnDuty(System.String)">
+            <summary>
+            Gets all employees on duty.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IManagerService.GetShiftsForEmployees(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets a list of the shifts for employees during a timeframe.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="start">The start of the timeframe.</param>
+            <param name="end">The end of the timeframe.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IManagerService.AddShift(System.String,System.Int32,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Adds a new shift.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID of the employee who's shift this is.</param>
+            <param name="role">The role for the shift.</param>
+            <param name="start">The start time of the shift.</param>
+            <param name="end">The end time of the shift.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.RemoveShift(System.String,System.Int32)">
+            <summary>
+            Removes a shift.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="shiftNumber">The shift number to be removed.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.EditShift(System.String,System.Int32,System.Int32,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Edits a shift based on its shift number.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="shiftNumber">The shift number to be edited.</param>
+            <param name="EmployeeId">The new employee id.</param>
+            <param name="role">The new role.</param>
+            <param name="start">The new start time of the shift.</param>
+            <param name="end">The new end time of the shift.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.GetAllEmployees(System.String)">
+            <summary>
+            Gets all employees.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IManagerService.AddUser(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Adds a new user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+            <param name="firstname">The firstname.</param>
+            <param name="lastname">The lastname.</param>
+            <param name="roles">The roles.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.ChangeUserPassword(System.String,System.Int32,System.String)">
+            <summary>
+            Changes the user password.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID.</param>
+            <param name="password">The new password.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.RemoveUser(System.String,System.Int32)">
+            <summary>
+            Removes the user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.AddUserToRole(System.String,System.Int32,System.String)">
+            <summary>
+            Adds the user to role.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID of the employee.</param>
+            <param name="role">The role that employee is to be added to.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.RemoveUserFromRole(System.String,System.Int32,System.String)">
+            <summary>
+            Removes the user from role.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID of hte employee.</param>
+            <param name="role">The role the are to be removed from.</param>
+        </member>
+        <member name="M:CRySTAL.IManagerService.GetTransactions(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the transactions over a time frame.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="startTime">The start time.</param>
+            <param name="endTime">The end time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.IManagerService.GetPayroleReport(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the payrole report.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="startTime">The start time of the report.</param>
+            <param name="endTime">The end time of the report.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CRySTAL.ManagerService">
+            <summary>
+            Provides an implementation of the IManagerService
+            </summary>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetAllEmployeesOnDuty(System.String)">
+            <summary>
+            Gets all employees on duty.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetShiftsForEmployees(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets a list of the shifts for employees during a timeframe.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="start">The start of the timeframe.</param>
+            <param name="end">The end of the timeframe.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.AddShift(System.String,System.Int32,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Adds a new shift.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID of the employee who's shift this is.</param>
+            <param name="role">The role for the shift.</param>
+            <param name="start">The start time of the shift.</param>
+            <param name="end">The end time of the shift.</param>
+        </member>
+        <member name="M:CRySTAL.ManagerService.EditShift(System.String,System.Int32,System.Int32,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Edits a shift based on its shift number.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="shiftNumber">The shift number to be edited.</param>
+            <param name="EmployeeId">The new employee id.</param>
+            <param name="role">The new role.</param>
+            <param name="start">The new start time of the shift.</param>
+            <param name="end">The new end time of the shift.</param>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetAllEmployees(System.String)">
+            <summary>
+            Gets all employees.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.getRoles(System.Int32)">
+            <summary>
+            Gets the roles.
+            </summary>
+            <param name="userID">The user ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.AddUser(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Adds a new user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+            <param name="firstname">The firstname.</param>
+            <param name="lastname">The lastname.</param>
+            <param name="roles">The roles.</param>
+        </member>
+        <member name="M:CRySTAL.ManagerService.ChangeUserPassword(System.String,System.Int32,System.String)">
+            <summary>
+            Changes the user password.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID.</param>
+            <param name="password">The new password.</param>
+        </member>
+        <member name="M:CRySTAL.ManagerService.RemoveUser(System.String,System.Int32)">
+            <summary>
+            Removes the user.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID.</param>
+        </member>
+        <member name="M:CRySTAL.ManagerService.AddUserToRole(System.String,System.Int32,System.String)">
+            <summary>
+            Adds the user to role.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID of the employee.</param>
+            <param name="role">The role that employee is to be added to.</param>
+        </member>
+        <member name="M:CRySTAL.ManagerService.RemoveUserFromRole(System.String,System.Int32,System.String)">
+            <summary>
+            Removes the user from role.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="EmployeeID">The employee ID of hte employee.</param>
+            <param name="role">The role the are to be removed from.</param>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetTransactions(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the transactions over a time frame.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="startTime">The start time.</param>
+            <param name="endTime">The end time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetBillFromDB(System.Guid)">
+            <summary>
+            Gets the bill from DB.
+            </summary>
+            <param name="workflowInstId">The workflow inst id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetPayroleReport(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the payrole report.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="startTime">The start time of the report.</param>
+            <param name="endTime">The end time of the report.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetEmployeePayout(CRySTALDataConnections.CRySTALDataSet.UsersRow,System.DateTime,System.DateTime,CRySTALDataConnections.CRySTALDataSet.RolePayrateDataTable)">
+            <summary>
+            Gets the employee payout.
+            </summary>
+            <param name="employee">The employee.</param>
+            <param name="start">The start date and time </param>
+            <param name="end">The end date and time</param>
+            <param name="payoutTable">The payout table.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetStatistics(System.String,CRySTAL.StatObject,CRySTAL.StatType,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the statistics.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="stat">The stat.</param>
+            <param name="typeOfStat">The type of stat.</param>
+            <param name="productID">The product ID.</param>
+            <param name="start">The start date and time </param>
+            <param name="end">The end date and time</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRySTAL.ManagerService.GetTopSellers(System.String,System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Gets the top sellers.
+            </summary>
+            <param name="sessionID">The sessionID of the current session</param>
+            <param name="start">The start date and time </param>
+            <param name="end">The end date and time</param>
+            <param name="numberOfItems">The number of items.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

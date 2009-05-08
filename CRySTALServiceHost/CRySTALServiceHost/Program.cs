@@ -59,9 +59,10 @@ namespace CRySTALServiceHost
             hosts.Add(new ServiceHost(typeof(CRySTAL.WaiterService)));
             hosts.Add(new ServiceHost(typeof(CRySTAL.TimeCardService)));
             hosts.Add(new ServiceHost(typeof(CRySTAL.ManagerService)));
-
+           
             foreach (ServiceHost host in hosts)
             {
+                
                 host.Open();
                 Console.WriteLine("CRySTAL: Service Running: " + host.BaseAddresses[0].ToString());
             }

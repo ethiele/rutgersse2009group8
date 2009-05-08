@@ -30,6 +30,9 @@
         SqlWorkflowPersistenceService sqlPersistenceService =
             new SqlWorkflowPersistenceService(connectionString, true, ownershipDuration, reloadIntevral);
         workflowRuntime.AddService(sqlPersistenceService);
+        workflowRuntime.AddService(new SharedConnectionWorkflowCommitWorkBatchService(connectionString));
+        
+        workflowRuntime.WorkflowIdled += new EventHandler<WorkflowEventArgs>(workflowRuntime_WorkflowIdled);
 
         SqlTrackingService sts = new SqlTrackingService(connectionString);
         workflowRuntime.AddService(sts);
@@ -37,6 +40,11 @@
         //Console.WriteLine("Starting Workflow Runtime...");
         workflowRuntime.StartRuntime();
 
+    }
+
+    void workflowRuntime_WorkflowIdled(object sender, WorkflowEventArgs e)
+    {
+        e.WorkflowInstance.Unload();
     }
     
     void Application_End(object sender, EventArgs e) 

@@ -7,3 +7,4 @@ C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHos
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\WorkflowLocalService\obj\Debug\WorkflowLocalService.pdb
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\WorkflowLocalService\bin\Debug\CRySTALDataConnections.dll
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\WorkflowLocalService\bin\Debug\CRySTALDataConnections.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\WorkflowLocalService\bin\Debug\CRySTALDataContracts.xml

@@ -30,3 +30,6 @@ C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHos
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALWorkflow.pdb
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALDataConnections.dll
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALDataConnections.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTAL.xml
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALServiceHost.XML
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALServiceHost\bin\Debug\CRySTALDataContracts.xml

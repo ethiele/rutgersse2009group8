@@ -30,10 +30,13 @@ namespace CRySTALWorkflow
             this.CheckRequested = new System.Workflow.Activities.HandleExternalEventActivity();
             this.AddToBill = new System.Workflow.Activities.HandleExternalEventActivity();
             this.FoodIsRequested = new System.Workflow.Activities.HandleExternalEventActivity();
+            this.faultHandlersActivity1 = new System.Workflow.ComponentModel.FaultHandlersActivity();
             this.CustomerRequestsCheck = new System.Workflow.Activities.EventDrivenActivity();
             this.AddFoodToBill = new System.Workflow.Activities.EventDrivenActivity();
             this.FoodOrderRequest = new System.Workflow.Activities.EventDrivenActivity();
             this.WaitForCustomerInput = new System.Workflow.Activities.ListenActivity();
+            this.faultHandlersActivity2 = new System.Workflow.ComponentModel.FaultHandlersActivity();
+            this.cancellationHandlerActivity1 = new System.Workflow.ComponentModel.CancellationHandlerActivity();
             this.CustomerPaied = new System.Workflow.Activities.HandleExternalEventActivity();
             this.OrderLoop = new System.Workflow.Activities.WhileActivity();
             // 
@@ -58,6 +61,10 @@ namespace CRySTALWorkflow
             this.FoodIsRequested.Name = "FoodIsRequested";
             this.FoodIsRequested.Invoked += new System.EventHandler<System.Workflow.Activities.ExternalDataEventArgs>(this.AddFoodRequest);
             // 
+            // faultHandlersActivity1
+            // 
+            this.faultHandlersActivity1.Name = "faultHandlersActivity1";
+            // 
             // CustomerRequestsCheck
             // 
             this.CustomerRequestsCheck.Activities.Add(this.CheckRequested);
@@ -78,11 +85,20 @@ namespace CRySTALWorkflow
             this.WaitForCustomerInput.Activities.Add(this.FoodOrderRequest);
             this.WaitForCustomerInput.Activities.Add(this.AddFoodToBill);
             this.WaitForCustomerInput.Activities.Add(this.CustomerRequestsCheck);
+            this.WaitForCustomerInput.Activities.Add(this.faultHandlersActivity1);
             this.WaitForCustomerInput.Name = "WaitForCustomerInput";
+            // 
+            // faultHandlersActivity2
+            // 
+            this.faultHandlersActivity2.Name = "faultHandlersActivity2";
+            // 
+            // cancellationHandlerActivity1
+            // 
+            this.cancellationHandlerActivity1.Name = "cancellationHandlerActivity1";
             // 
             // CustomerPaied
             // 
-            this.CustomerPaied.EventName = "OrderPaied";
+            this.CustomerPaied.EventName = "OrderPaid";
             this.CustomerPaied.InterfaceType = typeof(WorkflowLocalService.ICustomerLocalService);
             this.CustomerPaied.Name = "CustomerPaied";
             this.CustomerPaied.Invoked += new System.EventHandler<System.Workflow.Activities.ExternalDataEventArgs>(this.Paied);
@@ -98,6 +114,8 @@ namespace CRySTALWorkflow
             // 
             this.Activities.Add(this.OrderLoop);
             this.Activities.Add(this.CustomerPaied);
+            this.Activities.Add(this.cancellationHandlerActivity1);
+            this.Activities.Add(this.faultHandlersActivity2);
             this.Name = "CustomerWorkflow";
             this.CanModifyActivities = false;
 
@@ -105,6 +123,9 @@ namespace CRySTALWorkflow
 
 		#endregion
 
+        private FaultHandlersActivity faultHandlersActivity1;
+        private FaultHandlersActivity faultHandlersActivity2;
+        private CancellationHandlerActivity cancellationHandlerActivity1;
         private HandleExternalEventActivity CustomerPaied;
         private WhileActivity OrderLoop;
         private HandleExternalEventActivity FoodIsRequested;
@@ -114,6 +135,8 @@ namespace CRySTALWorkflow
         private HandleExternalEventActivity CheckRequested;
         private HandleExternalEventActivity AddToBill;
         private EventDrivenActivity CustomerRequestsCheck;
+
+
 
 
 

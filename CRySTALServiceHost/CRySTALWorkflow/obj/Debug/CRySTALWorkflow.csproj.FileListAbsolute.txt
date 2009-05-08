@@ -9,3 +9,4 @@ C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHos
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALWorkflow\obj\Debug\CRySTALWorkflow.pdb
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALWorkflow\bin\Debug\CRySTALDataConnections.dll
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALWorkflow\bin\Debug\CRySTALDataConnections.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALWorkflow\bin\Debug\CRySTALDataContracts.xml

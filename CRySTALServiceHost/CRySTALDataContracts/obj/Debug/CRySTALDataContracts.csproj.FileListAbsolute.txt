@@ -5,3 +5,4 @@ C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHos
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALDataContracts\obj\Debug\CRySTALDataContracts.pdb
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALDataContracts\bin\Debug\CRySTALDataConnections.dll
 C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALDataContracts\bin\Debug\CRySTALDataConnections.pdb
+C:\Users\ethiele\Documents\Visual Studio 2008\Projects\CRySTAL\CRySTALServiceHost\CRySTALDataContracts\bin\Debug\CRySTALDataContracts.XML
